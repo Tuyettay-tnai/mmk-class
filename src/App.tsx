@@ -10,8 +10,8 @@ import { AppsScriptModal } from './components/AppsScriptModal';
 import { Footer } from './components/Footer';
 import { SubmissionResult } from './types';
 
-const STORAGE_KEY_WEBHOOK = 'mnk_class_apps_script_url';
-export const DEFAULT_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx23KUPBW5KKM4iNtNZ250XGbIMK6Tj2QoqMCytz8_MqROEH4Wto5wuYdNGPQdGlXSxng/exec';
+const STORAGE_KEY_WEBHOOK = 'mnk_class_apps_script_url_v2';
+export const DEFAULT_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxLoVS-oRP5sW49BGL9o8F_yiSYC5xFvg8yNydzCSb25YTtbcsK8ygPkvjsFs18xNhpXg/exec';
 
 export default function App() {
   const [appsScriptUrl, setAppsScriptUrl] = useState<string>(DEFAULT_APPS_SCRIPT_URL);
@@ -23,10 +23,11 @@ export default function App() {
   useEffect(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_WEBHOOK);
-      if (saved) {
+      if (saved && saved.startsWith('http')) {
         setAppsScriptUrl(saved);
       } else {
         setAppsScriptUrl(DEFAULT_APPS_SCRIPT_URL);
+        localStorage.setItem(STORAGE_KEY_WEBHOOK, DEFAULT_APPS_SCRIPT_URL);
       }
     } catch (e) {
       // Ignore localStorage errors

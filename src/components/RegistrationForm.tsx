@@ -69,21 +69,26 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
       // If user configured a custom Google Apps Script Web App URL, make the actual call
       if (appsScriptUrl && appsScriptUrl.startsWith('http')) {
         try {
-          // Google Apps Script accepts text/plain as simple CORS without OPTIONS preflight check
+          const params = new URLSearchParams();
+          params.append('fullName', formData.fullName);
+          params.append('email', formData.email);
+          params.append('phone', formData.phone);
+          params.append('selectedCourse', formData.selectedCourse);
+          params.append('occupation', formData.occupation);
+          params.append('expectations', formData.expectations);
+          params.append('ticketCode', ticketCode);
+          params.append('timestamp', new Date().toISOString());
+
           await fetch(appsScriptUrl, {
             method: 'POST',
             mode: 'no-cors',
             headers: {
-              'Content-Type': 'text/plain;charset=utf-8',
+              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
             },
-            body: JSON.stringify({
-              ...formData,
-              ticketCode,
-              timestamp: new Date().toISOString()
-            })
+            body: params.toString()
           });
         } catch (fetchErr) {
-          console.warn('Apps Script direct submission note:', fetchErr);
+          console.warn('Apps Script submission note:', fetchErr);
         }
       } else {
         // Fallback simulation mode for testing before the user deploys their own Apps Script
