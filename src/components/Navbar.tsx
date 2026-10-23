@@ -1,13 +1,11 @@
 import React from 'react';
-import { Sparkles, Code2, Users } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 interface NavbarProps {
-  onOpenAppsScriptModal: () => void;
   onScrollToForm: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  onOpenAppsScriptModal,
   onScrollToForm,
 }) => {
   return (
@@ -17,12 +15,17 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Zone 1: Single text element wordmark */}
         <a 
           href="#" 
-          className="text-lg md:text-xl font-black tracking-tight text-white flex items-center gap-2 group"
+          className="text-lg md:text-xl font-black tracking-tight text-white flex items-center gap-2.5 group"
         >
-          <span className="w-9 h-8 rounded-lg bg-gradient-to-tr from-blue-700 to-amber-500 flex items-center justify-center text-xs font-black text-white shadow-md group-hover:scale-105 transition-transform">
-            MNK
-          </span>
-          <span className="font-heading">MNK - CLASS</span>
+          <img 
+            src="/images/mmk-badge.png" 
+            alt="MMK" 
+            className="w-9 h-9 object-contain rounded-lg shadow-md group-hover:scale-105 transition-transform drop-shadow"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = 'https://i.ibb.co/TDSHm7j8/929ebe10-b0ba-4178-a758-2824b802331d.png';
+            }}
+          />
+          <span className="font-heading tracking-wide">MMK - CLASS</span>
         </a>
 
         {/* Zone 2: Clean text navigation links */}
@@ -47,22 +50,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           </a>
         </nav>
 
-        {/* Zone 3: 1-2 primary actions */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          <button
-            onClick={onOpenAppsScriptModal}
-            type="button"
-            className="px-3 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 rounded-lg transition-colors flex items-center gap-1.5 whitespace-nowrap"
-            title="Xem mã nguồn Google Apps Script & Hướng dẫn cài đặt Google Sheets"
-          >
-            <Code2 className="w-3.5 h-3.5 text-amber-400" />
-            <span className="hidden sm:inline">Mã</span> Apps Script
-          </button>
-
+        {/* Zone 3: 1 primary action */}
+        <div className="flex items-center">
           <button
             onClick={onScrollToForm}
             type="button"
-            className="px-4 py-2 text-xs md:text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 rounded-lg shadow-md hover:shadow-amber-400/20 active:scale-95 transition-all whitespace-nowrap flex items-center gap-1.5"
+            className="px-5 py-2.5 text-xs md:text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 rounded-lg shadow-md hover:shadow-amber-400/20 active:scale-95 transition-all whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
           >
             <Sparkles className="w-3.5 h-3.5 text-slate-900" />
             Nhận Vé Miễn Phí

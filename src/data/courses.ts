@@ -18,7 +18,25 @@ export const COURSE_MODULES: CourseModule[] = [
     audience: 'Chủ kinh doanh, Freelancer, Marketer muốn tự làm web không phụ thuộc dev',
     iconType: 'code',
     badgeColor: 'from-blue-600 to-cyan-500',
-    highlights: ['Không cần biết code', 'Lên web sau 15 phút', 'Tiết kiệm hàng chục triệu']
+    highlights: ['Không cần biết code', 'Lên web sau 15 phút', 'Tiết kiệm hàng chục triệu'],
+    showcaseProducts: [
+      {
+        id: 'p-web-landing',
+        title: 'Landing Page Bán Hàng & Giới Thiệu Chuyên Nghiệp',
+        subtitle: 'Tạo website chuẩn UI/UX dark mode sang trọng, responsive 100% trên điện thoại',
+        tag: 'Landing Page AI',
+        imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+        aspectRatio: 'video'
+      },
+      {
+        id: 'p-web-app',
+        title: 'Hệ Thống Thu Thập Data Tự Động Kết Nối Google Sheets',
+        subtitle: 'Website tích hợp webhook thu thập khách hàng và tự động gửi email xác nhận tức thì',
+        tag: 'Web Full-Stack Vibe Code',
+        imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+        aspectRatio: 'video'
+      }
+    ]
   },
   {
     id: 'chatgpt-skills',
@@ -38,7 +56,25 @@ export const COURSE_MODULES: CourseModule[] = [
     audience: 'Dân văn phòng, Quản lý, Content Creator, Người khởi nghiệp',
     iconType: 'chatgpt',
     badgeColor: 'from-emerald-600 to-teal-500',
-    highlights: ['Ý tưởng', 'Viết bài', 'Hình ảnh', 'Video', 'Phân tích', 'Tự động hóa']
+    highlights: ['Ý tưởng', 'Viết bài', 'Hình ảnh', 'Video', 'Phân tích', 'Tự động hóa'],
+    showcaseProducts: [
+      {
+        id: 'p-chatgpt-bot',
+        title: 'Trợ Lý Custom GPTs Bán Hàng & Chăm Sóc Khách Hàng',
+        subtitle: 'Huấn luyện AI thông minh trả lời khách hàng 24/7 theo phong cách thương hiệu riêng',
+        tag: 'Custom GPT Trợ Lý',
+        imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80',
+        aspectRatio: 'video'
+      },
+      {
+        id: 'p-chatgpt-creative',
+        title: 'Kho Kịch Bản & Ấn Phẩm Quảng Cáo Đa Nền Tảng',
+        subtitle: 'Sản xuất hàng trăm bài viết quảng cáo, email marketing và hình ảnh thương mại độc quyền',
+        tag: 'Creative & Copywriting',
+        imageUrl: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80',
+        aspectRatio: 'video'
+      }
+    ]
   },
   {
     id: 'video-channels',
@@ -58,7 +94,27 @@ export const COURSE_MODULES: CourseModule[] = [
     audience: 'Người làm tiếp thị liên kết (Affiliate), Bán hàng online, Tiktoker, Youtuber',
     iconType: 'video',
     badgeColor: 'from-rose-600 to-amber-500',
-    highlights: ['TikTok', 'YouTube Shorts', 'Facebook Reels', 'CapCut AI']
+    highlights: ['TikTok', 'YouTube Shorts', 'Facebook Reels', 'CapCut AI'],
+    showcaseProducts: [
+      {
+        id: 'p-video-short',
+        title: 'Video Ngắn Triệu View Với MC Ảo AI Tiếng Việt',
+        subtitle: 'Nhân vật AI thuyết trình lôi cuốn, đồng bộ khẩu hình tự nhiên, thu hút hàng trăm nghìn tương tác',
+        tag: 'Video Viral TikTok/Reels',
+        videoUrl: 'https://www.youtube.com/watch?v=BASylcv8npQ',
+        youtubeId: 'BASylcv8npQ',
+        imageUrl: 'https://img.youtube.com/vi/BASylcv8npQ/hqdefault.jpg',
+        aspectRatio: 'video'
+      },
+      {
+        id: 'p-video-review',
+        title: 'Quy Trình Dựng Video CapCut & Giọng Đọc AI Tự Động',
+        subtitle: 'Biến ý tưởng thành video thành phẩm chỉ trong vài phút, tự động thêm phụ đề & âm thanh kịch tính',
+        tag: 'CapCut AI Automation',
+        imageUrl: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80',
+        aspectRatio: 'video'
+      }
+    ]
   },
   {
     id: 'digital-curriculum',
@@ -77,16 +133,34 @@ export const COURSE_MODULES: CourseModule[] = [
     audience: 'Giáo viên các cấp, Giảng viên, Đào tạo nội bộ doanh nghiệp, Gia sư',
     iconType: 'book',
     badgeColor: 'from-indigo-600 to-sky-500',
-    highlights: ['Bài giảng số', 'Tài nguyên AI', 'Bộ đề thi', 'Đánh giá tự động']
+    highlights: ['Bài giảng số', 'Tài nguyên AI', 'Bộ đề thi', 'Đánh giá tự động'],
+    showcaseProducts: [
+      {
+        id: 'p-edu-slide',
+        title: 'Bộ Slide Bài Giảng Điện Tử Tương Tác 3D Trực Quan',
+        subtitle: 'Tự động tạo bài giảng sinh động kèm tranh vẽ minh họa và sơ đồ tư duy bằng AI trong 5 phút',
+        tag: 'Slide Bài Giảng 4.0',
+        imageUrl: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80',
+        aspectRatio: 'video'
+      },
+      {
+        id: 'p-edu-exam',
+        title: 'Ngân Hàng Đề Thi & Ma Trận Kiểm Tra Phân Hóa Đa Cấp Độ',
+        subtitle: 'Sinh đề thi trắc nghiệm, phiếu bài tập và đáp án giải chi tiết tự động theo chuẩn chương trình',
+        tag: 'Học Liệu & Đề Thi Số',
+        imageUrl: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80',
+        aspectRatio: 'video'
+      }
+    ]
   }
 ];
 
 export const CLASS_INFO = {
-  title: 'MNK - CLASS: LÀM CHỦ AI ĐỘT PHÁ',
+  title: 'MMK - CLASS: LÀM CHỦ AI ĐỘT PHÁ',
   instructor: 'Chuyên Gia AI Ngô Tuyết',
   scheduleDisplay: '19:30 - 21:30 | 3 Buổi Thực Chiến Trực Tuyến',
   format: 'Học Trực Tuyến Qua Zoom (Bản Quyền Chất Lượng Cao)',
-  tuition: '100% MIỄN PHÍ (Suất Tài Trợ MNK - CLASS)',
+  tuition: '100% MIỄN PHÍ (Suất Tài Trợ MMK - CLASS)',
   zaloGroupUrl: 'https://zalo.me/g/pccjfp974',
   totalFreeSeats: 100,
   claimedSeats: 82,

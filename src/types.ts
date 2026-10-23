@@ -16,6 +16,17 @@ export interface SubmissionResult {
   timestamp?: string;
 }
 
+export interface ShowcaseProduct {
+  id: string;
+  title: string;
+  subtitle: string;
+  tag: string;
+  imageUrl: string;
+  videoUrl?: string;
+  youtubeId?: string;
+  aspectRatio?: 'video' | 'portrait' | 'square';
+}
+
 export interface CourseModule {
   id: string;
   title: string;
@@ -29,4 +40,5 @@ export interface CourseModule {
   iconType: 'code' | 'chatgpt' | 'video' | 'book';
   badgeColor: string;
   highlights: string[];
+  showcaseProducts?: ShowcaseProduct[];
 }

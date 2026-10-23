@@ -83,7 +83,7 @@ export const SuccessCelebrationModal: React.FC<SuccessCelebrationModalProps> = (
           </div>
 
           <div className="inline-block px-3 py-1 rounded-full bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-widest mb-2">
-            MNK - CLASS VIP TICKET
+            MMK - CLASS VIP TICKET
           </div>
 
           <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
@@ -106,7 +106,7 @@ export const SuccessCelebrationModal: React.FC<SuccessCelebrationModalProps> = (
                   Mã Vé VIP Của Bạn:
                 </span>
                 <span className="text-xl sm:text-2xl font-mono font-black text-amber-400 tracking-wider">
-                  {result.ticketCode || 'VIP-MNK-ONLINE'}
+                  {result.ticketCode || 'VIP-MMK-ONLINE'}
                 </span>
               </div>
 

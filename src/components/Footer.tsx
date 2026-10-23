@@ -2,11 +2,9 @@ import React from 'react';
 import { ExternalLink, ShieldCheck, Heart } from 'lucide-react';
 import { CLASS_INFO } from '../data/courses';
 
-interface FooterProps {
-  onOpenAppsScriptModal: () => void;
-}
+interface FooterProps {}
 
-export const Footer: React.FC<FooterProps> = ({ onOpenAppsScriptModal }) => {
+export const Footer: React.FC<FooterProps> = () => {
   return (
     <footer className="bg-[#03060e] border-t border-slate-900 text-slate-400 text-xs py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,10 +15,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppsScriptModal }) => {
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2">
               <span className="w-8 h-7 rounded-lg bg-gradient-to-tr from-blue-700 to-amber-500 flex items-center justify-center text-xs font-black text-white">
-                MNK
+                MMK
               </span>
               <span className="text-base font-black text-white tracking-tight font-heading">
-                MNK - CLASS · AI MASTERCLASS
+                MMK - CLASS · AI MASTERCLASS
               </span>
             </div>
             <p className="text-slate-400 max-w-md leading-relaxed">
@@ -62,15 +60,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppsScriptModal }) => {
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </li>
-              <li>
-                <button
-                  onClick={onOpenAppsScriptModal}
-                  type="button"
-                  className="text-slate-300 hover:text-amber-400 transition-colors text-left"
-                >
-                  Mã Google Apps Script & Hướng dẫn
-                </button>
-              </li>
               <li className="text-slate-400">
                 Hình thức học: Online Zoom Meeting
               </li>
@@ -82,7 +71,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAppsScriptModal }) => {
         {/* Quiet Bottom Strip */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400 text-[11px]">
           <div>
-            © 2026 MNK - CLASS. Bản quyền nội dung thuộc về <strong>Chuyên Gia AI Ngô Tuyết</strong>.
+            © 2026 MMK - CLASS. Bản quyền nội dung thuộc về <strong>Chuyên Gia AI Ngô Tuyết</strong>.
           </div>
           <div className="flex items-center gap-1">
             <span>Đồng hành cùng cộng đồng công nghệ & giáo dục số</span>

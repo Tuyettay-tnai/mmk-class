@@ -24,20 +24,19 @@ export const ExpertSection: React.FC = () => {
                 <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-blue-500/20 to-transparent pointer-events-none" />
 
                 {/* Avatar / Portrait Box */}
-                <div className="relative mx-auto w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden border-2 border-amber-400/60 shadow-[0_0_30px_rgba(245,158,11,0.25)] mb-6 bg-slate-900 flex items-center justify-center">
-                  {/* Styled Avatar Placeholder representation */}
-                  <div className="w-full h-full bg-gradient-to-tr from-[#0a1a3a] via-[#102d66] to-[#1e4e9e] flex flex-col items-center justify-center p-4 text-center">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-amber-400 to-yellow-200 border-2 border-white flex items-center justify-center text-slate-950 font-black text-2xl shadow-lg mb-2">
-                      NT
-                    </div>
-                    <span className="text-xs uppercase tracking-widest text-amber-300 font-extrabold">
-                      Chuyên Gia AI
-                    </span>
-                    <span className="text-base font-bold text-white mt-0.5">
-                      Ngô Tuyết
-                    </span>
-                    <span className="text-[11px] text-slate-300 mt-1">
-                      MNK - CLASS Master Trainer
+                <div className="relative mx-auto w-52 h-64 sm:w-60 sm:h-72 rounded-2xl overflow-hidden border-2 border-amber-400/80 shadow-[0_0_35px_rgba(245,158,11,0.3)] mb-6 bg-slate-900 group">
+                  <img
+                    src="/images/ngo-tuyet.png"
+                    alt="Chuyên Gia AI Ngô Tuyết - MMK - CLASS"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://i.ibb.co/W40WQ9jX/Chat-GPT-Image-13-02-49-1-thg-10-2026.png';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-2.5 inset-x-2 text-center pointer-events-none">
+                    <span className="text-[11px] uppercase tracking-wider text-amber-300 font-extrabold px-3 py-1 rounded-full bg-slate-950/85 backdrop-blur-md border border-amber-500/40 shadow-md">
+                      Chuyên Gia AI Ngô Tuyết
                     </span>
                   </div>
                 </div>
@@ -82,7 +81,7 @@ export const ExpertSection: React.FC = () => {
             </p>
 
             <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
-              Với triết lý <em className="text-amber-300 font-medium">"Không dạy lý thuyết hàn lâm — Chỉ dạy thứ mang lại kết quả ngay lập tức"</em>, lớp học <strong>MNK - CLASS</strong> được cô đọng bằng các quy trình rõ ràng, công thức câu lệnh (Prompt) chuẩn xác, giúp người học dù không am hiểu công nghệ vẫn có thể làm chủ AI nhanh chóng.
+              Với triết lý <em className="text-amber-300 font-medium">"Không dạy lý thuyết hàn lâm — Chỉ dạy thứ mang lại kết quả ngay lập tức"</em>, lớp học <strong>MMK - CLASS</strong> được cô đọng bằng các quy trình rõ ràng, công thức câu lệnh (Prompt) chuẩn xác, giúp người học dù không am hiểu công nghệ vẫn có thể làm chủ AI nhanh chóng.
             </p>
 
             {/* 3 Pillars of Commitment */}

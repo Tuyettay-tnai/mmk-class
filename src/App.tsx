@@ -6,7 +6,6 @@ import { ExpertSection } from './components/ExpertSection';
 import { ScheduleSection } from './components/ScheduleSection';
 import { RegistrationForm } from './components/RegistrationForm';
 import { SuccessCelebrationModal } from './components/SuccessCelebrationModal';
-import { AppsScriptModal } from './components/AppsScriptModal';
 import { Footer } from './components/Footer';
 import { SubmissionResult } from './types';
 
@@ -15,8 +14,7 @@ export const DEFAULT_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfyc
 
 export default function App() {
   const [appsScriptUrl, setAppsScriptUrl] = useState<string>(DEFAULT_APPS_SCRIPT_URL);
-  const [selectedCourse, setSelectedCourse] = useState<string>('Trọn bộ combo 4 khóa học AI MNK - Class');
-  const [isAppsScriptModalOpen, setIsAppsScriptModalOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState<string>('Trọn bộ combo 4 khóa học AI MMK - CLASS');
   const [celebrationResult, setCelebrationResult] = useState<SubmissionResult | null>(null);
 
   // Load saved Webhook URL from localStorage on mount
@@ -33,15 +31,6 @@ export default function App() {
       // Ignore localStorage errors
     }
   }, []);
-
-  const handleSaveAppsScriptUrl = (url: string) => {
-    setAppsScriptUrl(url);
-    try {
-      localStorage.setItem(STORAGE_KEY_WEBHOOK, url);
-    } catch (e) {
-      // Ignore
-    }
-  };
 
   const scrollToForm = () => {
     const el = document.getElementById('register');
@@ -60,7 +49,6 @@ export default function App() {
       
       {/* Top Navigation */}
       <Navbar
-        onOpenAppsScriptModal={() => setIsAppsScriptModalOpen(true)}
         onScrollToForm={scrollToForm}
       />
 
@@ -68,7 +56,6 @@ export default function App() {
         {/* Hero Banner with Poster Aesthetic */}
         <HeroSection
           onScrollToForm={scrollToForm}
-          onOpenAppsScriptModal={() => setIsAppsScriptModalOpen(true)}
         />
 
         {/* 4 Flagship Modules */}
@@ -86,29 +73,18 @@ export default function App() {
         <RegistrationForm
           initialCourse={selectedCourse}
           appsScriptUrl={appsScriptUrl}
-          onOpenAppsScriptModal={() => setIsAppsScriptModalOpen(true)}
           onSuccess={(result) => setCelebrationResult(result)}
         />
       </main>
 
       {/* Footer */}
-      <Footer
-        onOpenAppsScriptModal={() => setIsAppsScriptModalOpen(true)}
-      />
+      <Footer />
 
       {/* Success Celebration Popup */}
       <SuccessCelebrationModal
         isOpen={Boolean(celebrationResult)}
         result={celebrationResult}
         onClose={() => setCelebrationResult(null)}
-      />
-
-      {/* Developer Apps Script Code & Setup Modal */}
-      <AppsScriptModal
-        isOpen={isAppsScriptModalOpen}
-        appsScriptUrl={appsScriptUrl}
-        onSaveUrl={handleSaveAppsScriptUrl}
-        onClose={() => setIsAppsScriptModalOpen(false)}
       />
 
     </div>

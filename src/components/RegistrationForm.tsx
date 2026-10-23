@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import { Sparkles, Send, CheckCircle2, AlertCircle, Settings, ShieldCheck, Mail, Phone, User, BookOpen, Briefcase } from 'lucide-react';
+import { Sparkles, Send, CheckCircle2, AlertCircle, ShieldCheck, Mail, Phone, User, BookOpen, Briefcase } from 'lucide-react';
 import { RegistrationFormData, SubmissionResult } from '../types';
 import { COURSE_MODULES, CLASS_INFO } from '../data/courses';
 
 interface RegistrationFormProps {
   initialCourse?: string;
   appsScriptUrl: string;
-  onOpenAppsScriptModal: () => void;
   onSuccess: (result: SubmissionResult) => void;
 }
 
 export const RegistrationForm: React.FC<RegistrationFormProps> = ({
-  initialCourse = 'Trọn bộ combo 4 khóa học AI MNK - Class',
+  initialCourse = 'Trọn bộ combo 4 khóa học AI MMK - CLASS',
   appsScriptUrl,
-  onOpenAppsScriptModal,
   onSuccess
 }) => {
   const [formData, setFormData] = useState<RegistrationFormData>({
@@ -63,7 +61,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
     setIsLoading(true);
     setErrorMsg(null);
 
-    const ticketCode = 'VIP-MNK-' + Math.floor(1000 + Math.random() * 9000);
+    const ticketCode = 'VIP-MMK-' + Math.floor(1000 + Math.random() * 9000);
 
     try {
       // If user configured a custom Google Apps Script Web App URL, make the actual call
@@ -129,33 +127,12 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Giữ Chỗ Tham Gia Lớp Học 
-            <span className="text-gold-gradient font-heading ml-2">MNK - CLASS</span>
+            <span className="text-gold-gradient font-heading ml-2">MMK - CLASS</span>
           </h2>
 
           <p className="mt-3 text-slate-300 text-sm leading-relaxed">
             Điền thông tin chính xác bên dưới để hệ thống cấp mã vé VIP, gửi Email xác nhận và lên lịch tự động gửi link Zoom trước 30 phút.
           </p>
-        </div>
-
-        {/* Integration Status Bar */}
-        <div className="mb-6 p-3 sm:p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-between text-xs text-slate-300">
-          <div className="flex items-center gap-2">
-            <span className={`w-2.5 h-2.5 rounded-full ${appsScriptUrl ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
-            <span>
-              {appsScriptUrl 
-                ? 'Đã kết nối Webhook Google Sheets & Tự Động Gửi Mail' 
-                : 'Chế độ Demo (Chưa nhập Webhook Apps Script riêng)'}
-            </span>
-          </div>
-
-          <button
-            onClick={onOpenAppsScriptModal}
-            type="button"
-            className="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1.5 underline decoration-dotted"
-          >
-            <Settings className="w-3.5 h-3.5" />
-            <span>{appsScriptUrl ? 'Cấu hình lại' : 'Cài đặt Google Sheets'}</span>
-          </button>
         </div>
 
         {/* Form Container */}
@@ -239,8 +216,8 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-xl bg-slate-950/90 border border-slate-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-white text-sm transition-all"
               >
-                <option value="Trọn bộ combo 4 khóa học AI MNK - Class">
-                  🔥 Trọn bộ combo 4 khóa học AI MNK - Class (Khuyên dùng)
+                <option value="Trọn bộ combo 4 khóa học AI MMK - CLASS">
+                  🔥 Trọn bộ combo 4 khóa học AI MMK - CLASS (Khuyên dùng)
                 </option>
                 {COURSE_MODULES.map(course => (
                   <option key={course.id} value={course.title}>

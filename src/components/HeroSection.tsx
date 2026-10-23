@@ -6,10 +6,9 @@ import { CLASS_INFO } from '../data/courses';
 
 interface HeroSectionProps {
   onScrollToForm: () => void;
-  onOpenAppsScriptModal: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToForm, onOpenAppsScriptModal }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToForm }) => {
   // Simulated countdown timer (starts at 2 days, 14 hours, 32 mins, 40 secs)
   const [timeLeft, setTimeLeft] = useState({
     days: 2,
